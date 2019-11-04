@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <Version>0.0.1</Version>
+    <PackageId>Com.RFranco.AspNetCore.Prometheus</PackageId>
+    <Title>AspNetCorePrometheusInstrumentation</Title>
+    <Description>Prometheus instrumentation for Asp.Net Core applications</Description>
+    <Authors>Ruben Martinez; Javier Solana</Authors>
+    <Copyright>Copyright R.Franco Technologies 2019</Copyright>
+    <PackageTags>Asp.Net Core Instrumentation Prometheus Metrics</PackageTags>
+    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/rfrancotechnologies/aspenetcore-prometheus-instrumentation</PackageProjectUrl>
+    <IncludeSource>false</IncludeSource>
+    <PackageReleaseNotes>
+      First Version.
+    </PackageReleaseNotes>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="prometheus-net.AspNetCore" Version="3.3.0" />
+  </ItemGroup>
+</Project>
