@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <PackageId>Com.RFranco.AspNetCore.Prometheus</PackageId>
     <Title>AspNetCorePrometheusInstrumentation</Title>
     <Description>Prometheus instrumentation for Asp.Net Core applications</Description>
@@ -12,7 +12,7 @@
     <PackageProjectUrl>https://github.com/rfrancotechnologies/aspenetcore-prometheus-instrumentation</PackageProjectUrl>
     <IncludeSource>false</IncludeSource>
     <PackageReleaseNotes>
-      First Version.
+      If the http status code returned is not OK, then the error counter is increased.
     </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
