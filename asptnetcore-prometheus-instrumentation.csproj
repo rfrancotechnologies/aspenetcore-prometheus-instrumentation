@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <Version>0.0.3</Version>
+    <Version>0.0.4</Version>
     <PackageId>Com.RFranco.AspNetCore.Prometheus</PackageId>
     <Title>AspNetCorePrometheusInstrumentation</Title>
     <Description>Prometheus instrumentation for Asp.Net Core applications</Description>
@@ -12,10 +12,11 @@
     <PackageProjectUrl>https://github.com/rfrancotechnologies/aspenetcore-prometheus-instrumentation</PackageProjectUrl>
     <IncludeSource>false</IncludeSource>
     <PackageReleaseNotes>
-      If the http status code returned is not OK, then the error counter is increased.
+      Use router template instead of request url path as method label.
     </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="prometheus-net.AspNetCore" Version="3.3.0" />
   </ItemGroup>
 </Project>
