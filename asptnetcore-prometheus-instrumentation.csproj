@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <Version>0.0.4</Version>
+    <Version>0.0.5</Version>
     <PackageId>Com.RFranco.AspNetCore.Prometheus</PackageId>
     <Title>AspNetCorePrometheusInstrumentation</Title>
     <Description>Prometheus instrumentation for Asp.Net Core applications</Description>
@@ -12,7 +12,7 @@
     <PackageProjectUrl>https://github.com/rfrancotechnologies/aspenetcore-prometheus-instrumentation</PackageProjectUrl>
     <IncludeSource>false</IncludeSource>
     <PackageReleaseNotes>
-      Use router template instead of request url path as method label.
+      UNKNOWN_REQUEST_PATH for 404's requests  avoiding use request path as unbounded labels.
     </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>

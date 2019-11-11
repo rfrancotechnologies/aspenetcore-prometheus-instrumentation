@@ -13,6 +13,7 @@ namespace Com.RFranco.AspNetCore.Prometheus
 
     public class MetricsMiddleware
     {
+        private const string UNKNOWN_REQUEST_PATH = "NotFound";
         private readonly RequestDelegate _next;
         private readonly IActionDescriptorCollectionProvider _actionDescriptorCollectionProvider;
         private static readonly Counter RequestsProcessed = Metrics.CreateCounter("http_requests_total", "Number of successfull processed requests.", "method");
@@ -59,7 +60,7 @@ namespace Com.RFranco.AspNetCore.Prometheus
 
         private string GetRequestTemplate(HttpRequest request)
         {
-            string requestTemplate = request.Path.Value;
+            string requestTemplate = UNKNOWN_REQUEST_PATH;
 
             var routes = _actionDescriptorCollectionProvider.ActionDescriptors.Items;
             foreach (ActionDescriptor descriptor in routes)
