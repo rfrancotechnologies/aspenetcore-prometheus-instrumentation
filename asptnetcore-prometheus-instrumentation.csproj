@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <Version>0.0.5</Version>
+    <Version>0.0.6</Version>
     <PackageId>Com.RFranco.AspNetCore.Prometheus</PackageId>
     <Title>AspNetCorePrometheusInstrumentation</Title>
     <Description>Prometheus instrumentation for Asp.Net Core applications</Description>
@@ -10,9 +10,10 @@
     <PackageTags>Asp.Net Core Instrumentation Prometheus Metrics</PackageTags>
     <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/rfrancotechnologies/aspenetcore-prometheus-instrumentation</PackageProjectUrl>
+    <PackageIconUrl>http://www.rfranco.com/rfjobs/wp-content/uploads/2018/06/logo_pica_grupo.png</PackageIconUrl>
     <IncludeSource>false</IncludeSource>
     <PackageReleaseNotes>
-      UNKNOWN_REQUEST_PATH for 404's requests  avoiding use request path as unbounded labels.
+      Removed redundant metrics.
     </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
