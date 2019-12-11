@@ -17,3 +17,15 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }  
 
 ```
+
+Its also possible to configure the middleware overriding the default behavior (ignoring calls that contains`/swagger`, `/health` and `/metrics` in the path) passing a list of path to be ignored as parameters (in the next example, we are excluding calls that contains `/swagger` in the path):
+
+```csharp
+
+public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+{
+    ...
+    app.UseMetricsMiddleware(new MetricsMiddlewareOptions{ExcludedPaths = new List<string>{"/swagger"}});
+    ...
+}
+```
