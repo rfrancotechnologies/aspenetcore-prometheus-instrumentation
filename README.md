@@ -29,3 +29,17 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
     ...
 }
 ```
+
+Also is possible to customize the buckets of the internal histogram used:
+
+```csharp
+
+public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+{
+    ...
+    app.UseMetricsMiddleware(new MetricsMiddlewareOptions{Buckets = new double[]{ .005, .01, .025, .05, .075, .1, .25, .5, .75, 1, 2.5, 5, 7.5, 10 }});
+    ...
+}
+```
+
+By default, it uses the next list of buckets `{ .1, .25, 1, 2.5, 5 }`.

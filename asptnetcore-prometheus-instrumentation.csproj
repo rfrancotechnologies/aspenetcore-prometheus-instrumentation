@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <Version>0.0.8</Version>
+    <Version>0.0.9</Version>
     <PackageId>Com.RFranco.AspNetCore.Prometheus</PackageId>
     <Title>AspNetCorePrometheusInstrumentation</Title>
     <Description>Prometheus instrumentation for Asp.Net Core applications</Description>
@@ -13,7 +13,7 @@
     <PackageIconUrl>http://www.rfranco.com/rfjobs/wp-content/uploads/2018/06/logo_pica_grupo.png</PackageIconUrl>
     <IncludeSource>false</IncludeSource>
     <PackageReleaseNotes>
-      Metrics renamed.
+      Customize buckets.
     </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>

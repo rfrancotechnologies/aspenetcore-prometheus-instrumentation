@@ -19,15 +19,24 @@ namespace Com.RFranco.AspNetCore.Prometheus
         private const string UNKNOWN_REQUEST_PATH = "NotFound";
         private readonly RequestDelegate _next;
         private readonly IActionDescriptorCollectionProvider _actionDescriptorCollectionProvider;
-        private static readonly Counter ErrorRequestsProcessed = Metrics.CreateCounter("server_request_error_total", "Number of unsuccessfull processed requests.", "method", "code_error");
-        private static readonly Gauge OngoingRequests = Metrics.CreateGauge("server_request_in_progress", "Number of ongoing requests.", "method");
-        private static readonly Histogram RequestResponseHistogram = Metrics.CreateHistogram("server_request_duration_seconds", "Histogram of request duration in seconds.", "method");
+        private Counter ErrorRequestsProcessed;
+        private Gauge OngoingRequests;
+        private Histogram RequestResponseHistogram;
 
         public MetricsMiddleware(RequestDelegate next, IActionDescriptorCollectionProvider actionDescriptorCollectionProvider, MetricsMiddlewareOptions options)
         {
             _next = next;
             _actionDescriptorCollectionProvider = actionDescriptorCollectionProvider;
             _options = options;
+            
+            ErrorRequestsProcessed = Metrics.CreateCounter("server_request_error_total", "Number of unsuccessfull processed requests.", "method", "code_error");
+            OngoingRequests = Metrics.CreateGauge("server_request_in_progress", "Number of ongoing requests.", "method");
+            RequestResponseHistogram = Metrics.CreateHistogram("server_request_duration_seconds", "Histogram of request duration in seconds.",
+                new HistogramConfiguration() {
+                    LabelNames = new string[]{"method"},
+                    Buckets = _options.Buckets
+                });           
+
         }
 
         public async Task Invoke(HttpContext context)
