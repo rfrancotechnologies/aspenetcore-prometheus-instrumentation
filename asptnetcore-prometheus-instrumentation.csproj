@@ -13,7 +13,7 @@
     <PackageIconUrl>http://www.rfranco.com/rfjobs/wp-content/uploads/2018/06/logo_pica_grupo.png</PackageIconUrl>
     <IncludeSource>false</IncludeSource>
     <PackageReleaseNotes>
-      Customize buckets.
+      server_request_error_total label code_error renamed to error_code
     </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
