@@ -29,7 +29,7 @@ namespace Com.RFranco.AspNetCore.Prometheus
             _actionDescriptorCollectionProvider = actionDescriptorCollectionProvider;
             _options = options;
             
-            ErrorRequestsProcessed = Metrics.CreateCounter("server_request_error_total", "Number of unsuccessfull processed requests.", "method", "code_error");
+            ErrorRequestsProcessed = Metrics.CreateCounter("server_request_error_total", "Number of unsuccessfull processed requests.", "method", "error_code");
             OngoingRequests = Metrics.CreateGauge("server_request_in_progress", "Number of ongoing requests.", "method");
             RequestResponseHistogram = Metrics.CreateHistogram("server_request_duration_seconds", "Histogram of request duration in seconds.",
                 new HistogramConfiguration() {
